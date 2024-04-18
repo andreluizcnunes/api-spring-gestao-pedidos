@@ -16,9 +16,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/categorias")
 public class CategoriaResource {
+    private final CategoriaService categoriaService;
 
     @Autowired
-    private CategoriaService service;
+    public CategoriaResource(CategoriaService categoriaService){
+        this.categoriaService = categoriaService;
+    }
 
     @GetMapping()
     public List<Categoria> listar(){
@@ -35,7 +38,7 @@ public class CategoriaResource {
 
     @GetMapping("/{id}")
     public ResponseEntity<?> buscarId(@PathVariable Integer id){
-        Optional<Categoria> obj = service.bucar(id);
+        Categoria obj = categoriaService.bucar(id);
         return ResponseEntity.ok().body(obj);
     }
 }
