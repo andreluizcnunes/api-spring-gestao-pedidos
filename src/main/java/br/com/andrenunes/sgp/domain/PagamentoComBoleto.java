@@ -1,9 +1,11 @@
 package br.com.andrenunes.sgp.domain;
 
 import br.com.andrenunes.sgp.domain.enuns.EstadoPagamento;
+import jakarta.persistence.Entity;
 
 import java.util.Date;
 
+@Entity
 public class PagamentoComBoleto extends Pagamento{
     private static final long serialVersionUIDLONG = 1L;
     private Date dataVencimento;

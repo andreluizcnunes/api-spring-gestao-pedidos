@@ -1,7 +1,9 @@
 package br.com.andrenunes.sgp.domain;
 
 import br.com.andrenunes.sgp.domain.enuns.EstadoPagamento;
+import jakarta.persistence.Entity;
 
+@Entity
 public class PagamentoComCartao extends Pagamento{
     private static final long serialVersionUIDLONG = 1L;
     private Integer numeroDeParcelas;
